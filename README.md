@@ -23,3 +23,9 @@
 - And `value` is the value to store in the new node
 - Returns a pointer to the created node, or `NULL` on failure or if parent is `NULL`
 - If `parent` already has a right-child, the new node must take its place, and the old right-child must be set as the right-child of the new node.
+
+#### Task 3: Delete
+[3-binary_tree_delete.c](3-binary_tree_delete.c) contains that deletes an entire binary tree
+- Prototype: `void binary_tree_delete(binary_tree_t *tree);`
+- Where `tree` is a pointer to the root node of the tree to delete
+- Does nothing if tree is NULL
