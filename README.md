@@ -94,3 +94,9 @@
 - Prototype: `size_t binary_tree_nodes(const binary_tree_t *tree);`
 - Where `tree` is a pointer to the root node of the tree to count the number of nodes
 - Returns `0` if tree is `NULL`
+
+#### Task 14: Balance factor
+[14-binary_tree_balance.c](14-binary_tree_balance.c) contains a function that measures the balance factor a binary tree
+- Prototype: `int binary_tree_balance(const binary_tree_t *tree);`
+- Where `tree` is a pointer to the root node of the tree to measure the balance factor
+- Returns `0` if tree is `NULL`
