@@ -106,3 +106,9 @@
 - Prototype: `int binary_tree_is_full(const binary_tree_t *tree);`
 - Where `tree` is a pointer to the root node of the tree to check
 - Returns `0` if tree is `NULL`
+
+#### Task 16: Is perfect
+[16-binary_tree_is_perfect.c](16-binary_tree_is_perfect.c) contains a function that checks if a binary tree is perfect
+- Prototype: `int binary_tree_is_perfect(const binary_tree_t *tree);`
+- Where `tree` is a pointer to the root node of the tree to check
+- Returns `0` if tree is `NULL`
