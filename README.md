@@ -70,3 +70,9 @@
 - Prototype: `size_t binary_tree_height(const binary_tree_t *tree);`
 - Where `tree` is a pointer to the root node of the tree to measure the height.
 - Returns `0` if tree is `NULL`
+
+#### Task 10: Depth
+[10-binary_tree_depth.c](10-binary_tree_depth.c) contains a function that measures the depth of a node in a binary tree
+- Prototype: `size_t binary_tree_depth(const binary_tree_t *tree);`
+- Where `tree` is a pointer to the node to measure the depth
+- Retursn `0` if tree is `NULL`
