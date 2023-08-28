@@ -15,3 +15,11 @@
 - And `value` is the value to store in the new node
 - Returns a pointer to the created node, or `NULL` on failure or if parent is `NULL`
 - If `parent` already has a left-child, the new node must take its place, and the old left-child must be set as the left-child of the new node.
+
+#### Task 2: Insert Right
+[2-binary_tree_insert_right.c](2-binary_tree_insert_right.c) contains a function that inserts a node as the right-child of another node.
+- Prototype: `binary_tree_t *binary_tree_insert_right(binary_tree_t *parent, int value);`
+- Where `parent` is a pointer to the node to insert the rightt-child in
+- And `value` is the value to store in the new node
+- Returns a pointer to the created node, or `NULL` on failure or if parent is `NULL`
+- If `parent` already has a right-child, the new node must take its place, and the old right-child must be set as the right-child of the new node.
