@@ -50,3 +50,10 @@
 - Where `tree` is a pointer to the root node of the tree to traverse
 - And `func` is a pointer to a function to call for each node. The value in the node is passed as a parameter to this function.
 - Does nothing if `tree` or `func` is `NULL`
+
+#### Task 7: In-order traversal
+[7-binary_tree_inorder.c](7-binary_tree_inorder.c) contains a function that goes through a binary tree using in-order traversal
+- Prototype: `void binary_tree_inorder(const binary_tree_t *tree, void (*func)(int));`
+- Where `tree` is a pointer to the root node of the tree to traverse
+- And `func` is a pointer to a function to call for each node. The value in the node is passed as a parameter to this function.
+- Does nothing if `tree` or `func` is `NULL`
