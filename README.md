@@ -100,3 +100,9 @@
 - Prototype: `int binary_tree_balance(const binary_tree_t *tree);`
 - Where `tree` is a pointer to the root node of the tree to measure the balance factor
 - Returns `0` if tree is `NULL`
+
+#### Task 15: Is full
+[15-binary_tree_is_full.c](15-binary_tree_is_full.c) contains a function that checks if a binary tree is full
+- Prototype: `int binary_tree_is_full(const binary_tree_t *tree);`
+- Where `tree` is a pointer to the root node of the tree to check
+- Returns `0` if tree is `NULL`
