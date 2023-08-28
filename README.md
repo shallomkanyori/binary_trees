@@ -88,3 +88,9 @@
 - Prototype: `size_t binary_tree_leaves(const binary_tree_t *tree);`
 - Where `tree` is a pointer to the root node of the tree to count the number of leaves
 - Returns `0` if tree is `NULL`
+
+#### Task 13: Nodes
+[13-binary_tree_nodes.c](13-binary_tree_nodes.c) contains a function that counts the nodes with at least 1 child in a binary tree
+- Prototype: `size_t binary_tree_nodes(const binary_tree_t *tree);`
+- Where `tree` is a pointer to the root node of the tree to count the number of nodes
+- Returns `0` if tree is `NULL`
