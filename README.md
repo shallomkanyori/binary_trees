@@ -43,3 +43,10 @@
 - Where `node` is a pointer to the node to check
 - Returns `1` if `node` is a root, otherwise `0`
 - If node is `NULL`, return `0`
+
+#### Task 6: Pre-order traversal
+[6-binary_tree_preorder.c](6-binary_tree_preorder.c) contains a function that goes through a binary tree using pre-order traversal
+- Prototype: `void binary_tree_preorder(const binary_tree_t *tree, void (*func)(int));`
+- Where `tree` is a pointer to the root node of the tree to traverse
+- And `func` is a pointer to a function to call for each node. The value in the node is passed as a parameter to this function.
+- Does nothing if `tree` or `func` is `NULL`
