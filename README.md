@@ -82,3 +82,9 @@
 - Prototype: `size_t binary_tree_size(const binary_tree_t *tree);`
 - Where `tree` is a pointer to the root node of the tree to measure the size
 - Returns `0` if tree is `NULL`
+
+#### Task 12: Leaves
+[12-binary_tree_leaves.c](12-binary_tree_leaves.c) contains a function that counts the leaves in a binary tree
+- Prototype: `size_t binary_tree_leaves(const binary_tree_t *tree);`
+- Where `tree` is a pointer to the root node of the tree to count the number of leaves
+- Returns `0` if tree is `NULL`
