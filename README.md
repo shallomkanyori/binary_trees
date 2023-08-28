@@ -112,3 +112,11 @@
 - Prototype: `int binary_tree_is_perfect(const binary_tree_t *tree);`
 - Where `tree` is a pointer to the root node of the tree to check
 - Returns `0` if tree is `NULL`
+
+#### Task 17: Sibling
+[17-binary_tree_sibling.c](17-binary_tree_sibling.c) contains a function that finds the sibling of a node
+- Prototype: `binary_tree_t *binary_tree_sibling(binary_tree_t *node);`
+- Where `node` is a pointer to the node to find the sibling
+- Returns a pointer to the sibling node
+- If node is `NULL` or the parent is `NULL`, returns `NULL`
+- If `node` has no sibling, returns `NULL`
