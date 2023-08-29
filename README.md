@@ -150,3 +150,9 @@
 - Prototype: `int binary_tree_is_complete(const binary_tree_t *tree);`
 - Where `tree` is a pointer to the root node of the tree to check
 - Returns `0` if tree is `NULL`
+
+#### Task 22: Rotate left
+[103-binary_tree_rotate_left.c](103-binary_tree_rotate_left.c) contains a function that performs a left-rotation on a binary tree
+- Prototype: `binary_tree_t *binary_tree_rotate_left(binary_tree_t *tree);`
+- Where `tree` is a pointer to the root node of the tree to rotate
+- Returns a pointer to the new root node of the tree once rotated
