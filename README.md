@@ -162,3 +162,10 @@
 - Prototype: `binary_tree_t *binary_tree_rotate_right(binary_tree_t *tree);`
 - Where `tree` is a pointer to the root node of the tree to rotate
 - Returns a pointer to the new root node of the tree once rotated
+
+#### Task Is BST
+[110-binary_tree_is_bst.c](110-binary_tree_is_bst.c) contains a function that checks if a binary tree is a valid Binary Search Tree
+- Prototype: `int binary_tree_is_bst(const binary_tree_t *tree);`
+- Where `tree` is a pointer to the root node of the tree to check
+- Returns `1` if `tree` is a valid BST, and `0` otherwise
+- Returns `0` if tree is `NULL`
