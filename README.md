@@ -144,3 +144,9 @@
 - Where `tree` is a pointer to the root node of the tree to traverse
 - And `func` is a pointer to a function to call for each node. The value in the node is passed as a parameter to this function.
 - Does nothing if `tree` or `func` is `NULL`
+
+#### Task 21: Is complete
+[102-binary_tree_is_complete.c](102-binary_tree_is_complete.c) contains a function that checks if a binary tree is complete
+- Prototype: `int binary_tree_is_complete(const binary_tree_t *tree);`
+- Where `tree` is a pointer to the root node of the tree to check
+- Returns `0` if tree is `NULL`
