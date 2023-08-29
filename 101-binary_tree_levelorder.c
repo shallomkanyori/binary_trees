@@ -48,8 +48,12 @@ void process_level(const binary_tree_t *tree, int l, void (*func)(int))
  */
 void binary_tree_levelorder(const binary_tree_t *tree, void (*func)(int))
 {
-	int h = height(tree);
-	int l;
+	int h, l;
+
+	if (tree == NULL || func == NULL)
+		return;
+
+	h = height(tree);
 
 	for (l = 0; l < h; l++)
 		process_level(tree, l, func);
