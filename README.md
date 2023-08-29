@@ -186,3 +186,11 @@
 - And `size` is the number of elements in the array
 - Returns a pointer to the root node of the created BST, or `NULL` on failure
 - If a value of the array is already present in the tree, this value is ignored
+
+#### Task 27: BST - Search
+[113-bst_search.c](113-bst_search.c) contains a function that searches for a value in a Binary Search Tree
+- Prototype: `bst_t *bst_search(const bst_t *tree, int value);`
+- Where `tree` is a pointer to the root node of the BST to search
+- And `value` is the value to search in the tree
+- Returns a pointer to the node containing a value equals to `value`
+- Returns `NULL` if `tree` is `NULL` or if nothing is found
