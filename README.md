@@ -178,3 +178,11 @@
 - Returns a pointer to the created node, or `NULL` on failure
 - If the address stored in `tree` is `NULL`, the created node becomes the root node.
 - If the value is already present in the tree, it is ignored
+
+#### Task 26: BST - Array to BST
+[112-array_to_bst.c](112-array_to_bst.c) contains a function that builds a Binary Search Tree from an array
+- Prototype: `bst_t *array_to_bst(int *array, size_t size);`
+- Where `array` is a pointer to the first element of the array to be converted
+- And `size` is the number of elements in the array
+- Returns a pointer to the root node of the created BST, or `NULL` on failure
+- If a value of the array is already present in the tree, this value is ignored
