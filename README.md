@@ -156,3 +156,9 @@
 - Prototype: `binary_tree_t *binary_tree_rotate_left(binary_tree_t *tree);`
 - Where `tree` is a pointer to the root node of the tree to rotate
 - Returns a pointer to the new root node of the tree once rotated
+
+#### Task 23: Rotate right
+[104-binary_tree_rotate_right.c](104-binary_tree_rotate_right.c) contains a function that performs a right-rotation on a binary tree
+- Prototype: `binary_tree_t *binary_tree_rotate_right(binary_tree_t *tree);`
+- Where `tree` is a pointer to the root node of the tree to rotate
+- Returns a pointer to the new root node of the tree once rotated
