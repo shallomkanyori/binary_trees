@@ -169,3 +169,12 @@
 - Where `tree` is a pointer to the root node of the tree to check
 - Returns `1` if `tree` is a valid BST, and `0` otherwise
 - Returns `0` if tree is `NULL`
+
+#### Task 25: BST - Insert
+[111-bst_insert.c](111-bst_insert.c) contains a function that inserts a value in a Binary Search Tree
+- Prototype: `bst_t *bst_insert(bst_t **tree, int value);`
+- Where `tree` is a double pointer to the root node of the BST to insert the value
+- And `value` is the value to store in the node to be inserted
+- Returns a pointer to the created node, or `NULL` on failure
+- If the address stored in `tree` is `NULL`, the created node becomes the root node.
+- If the value is already present in the tree, it is ignored
