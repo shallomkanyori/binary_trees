@@ -1,14 +1,14 @@
 #include "binary_trees.h"
 
 /**
- * _search - searches for a value in a BST
+ * search1 - searches for a value in a BST
  * @tree: pointer to the root node of the BST
  * @value: the value to look for
  *
  * Return: a pointer to the node containing value. NULL if not found or if
  * tree is NULL.
  */
-bst_t *_search(const bst_t *tree, int value)
+bst_t *search1(const bst_t *tree, int value)
 {
 	bst_t *curr;
 
@@ -94,7 +94,7 @@ bst_t *bst_remove(bst_t *root, int value)
 	if (root == NULL)
 		return (NULL);
 
-	node = _search(root, value);
+	node = search1(root, value);
 	if (node == NULL)
 		return (NULL);
 
