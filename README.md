@@ -194,3 +194,12 @@
 - And `value` is the value to search in the tree
 - Returns a pointer to the node containing a value equals to `value`
 - Returns `NULL` if `tree` is `NULL` or if nothing is found
+
+#### Task 28: BST - Remove
+[114-bst_remove.c](114-bst_remove.c) contains a function that removes a node from a Binary Search Tree
+- Prototype: `bst_t *bst_remove(bst_t *root, int value);`
+- Where `root` is a pointer to the root node of the tree to be updated
+- And `value` is the value to remove in the tree
+- Once located, the node containing a value equals to value is removed and freed
+- If the node to be deleted has two children, it is replaced with its first `in-order successor`
+- Returns a pointer to the new root node of the tree after removing the desired value
