@@ -128,3 +128,12 @@
 - Returns a pointer to the uncle node
 - If node is `NULL`, returns `NULL`
 - If `node` has no uncle, returns `NULL`
+
+
+#### Task 19: Lowest common ancestor
+[100-binary_trees_ancestor.c](100-binary_trees_ancestor.c) contains  function that finds the lowest common ancestor of two nodes
+- Prototype: `binary_tree_t *binary_trees_ancestor(const binary_tree_t *first, const binary_tree_t *second);`
+- Where `first` is a pointer to the first node
+- And `second` is a pointer to the second node
+- Returns a pointer to the lowest common ancestor node of the two given nodes
+- If no common ancestor was found, returns `NULL`
