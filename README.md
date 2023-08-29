@@ -203,3 +203,9 @@
 - Once located, the node containing a value equals to value is removed and freed
 - If the node to be deleted has two children, it is replaced with its first `in-order successor`
 - Returns a pointer to the new root node of the tree after removing the desired value
+
+#### Task Big O #BST
+[115-O](115-O) contains the average time complexities of those operations on a Binary Search Tree (one answer per line):
+- Inserting the value `n`
+- Removing the node with the value `n`
+- Searching for a node in a BST of size `n`
