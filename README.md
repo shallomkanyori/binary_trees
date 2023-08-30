@@ -216,3 +216,12 @@
 - Where `tree` is a pointer to the root node of the tree to check
 - Returns `1` if `tree` is a valid AVL Tree, and `0` otherwise
 - Returns `0` if tree is `NULL`
+
+#### Task 31: AVL - Insert
+[121-avl_insert.c](121-avl_insert.c) contains a function that inserts a value in an AVL Tree
+- Prototype: `avl_t *avl_insert(avl_t **tree, int value);`
+- Where `tree` is a double pointer to the root node of the AVL tree to insert the value
+- And `value` is the value to store in the node to be inserted
+- Returns a pointer to the created node, or `NULL` on failure
+- If the address stored in `tree` is `NULL`, the created node becomes the root node.
+- After the insertion, the tree remains an AVL tree.
