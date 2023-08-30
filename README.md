@@ -225,3 +225,11 @@
 - Returns a pointer to the created node, or `NULL` on failure
 - If the address stored in `tree` is `NULL`, the created node becomes the root node.
 - After the insertion, the tree remains an AVL tree.
+
+#### Task 32: AVL - Array to AVL
+[122-array_to_avl.c](122-array_to_avl.c) contains a function that builds an AVL tree from an array
+- Prototype: `avl_t *array_to_avl(int *array, size_t size);`
+- Where `array` is a pointer to the first element of the array to be converted
+- And `size` is the number of elements in the array
+- Returns a pointer to the root node of the created AVL tree, or `NULL` on failure
+- If a value of the array is already present in the tree, this value is ignored
