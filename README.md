@@ -243,3 +243,13 @@
 - If the node to be deleted has two children, it is replaced with its first `in-order successor`
 - The tree is rebalanced after deletion of the desired node if necessary
 - Returns a pointer to the new root node of the tree after removing the desired value
+
+#### Task: 34: AVL - From sorted array
+[124-sorted_array_to_avl.c](124-sorted_array_to_avl.c) contains a  function that builds an AVL tree from an array
+- Prototype: `avl_t *sorted_array_to_avl(int *array, size_t size);`
+- Where `array` is a pointer to the first element of the array to be converted
+- And `size` is the number of elements in the array
+- Returns a pointer to the root node of the created AVL tree, or `NULL` on failure
+- Assumes there will be no duplicate value in the array
+- Does not rotate
+- File only has 2 functions
