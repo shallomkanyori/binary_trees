@@ -1,7 +1,7 @@
 #include "binary_trees.h"
 
 /**
- * avl_delete - deletes an entire binary tree
+ * avl_delete - deletes an entire AVL tree
  * @tree: pointer to the root node of the tree
  *
  * Return: nothing.
@@ -74,14 +74,14 @@ avl_t *array_to_avl(int *array, size_t size)
 {
 	avl_t *root = NULL;
 	int *arr_cpy;
-	size_t i;
+	size_t i, new_size =  size;
 
-	if (array == NULL)
+	if (array == NULL || size == 0)
 		return (NULL);
 
-	arr_cpy = remove_duplicates(array, &size);
+	arr_cpy = remove_duplicates(array, &new_size);
 
-	for (i = 0; i < size; i++)
+	for (i = 0; i < new_size; i++)
 	{
 		if (avl_insert(&root, arr_cpy[i]) == NULL)
 		{
