@@ -24,27 +24,31 @@ void shift_nodes(avl_t **tree, avl_t *n1, avl_t *n2)
 
 /**
  * del_rotate_left - left rotates a subtree to balance an AVL tree
- * @sib: pointer to the sibling node of the affected subtree
- * @p: pointer to the root node of the subtree
- * @sib_bf: the balance factor of the sibling node
+ * @n: pointer to the root node of the subtree
  *
  * Return: the new root node of the rotated subtree.
  */
-avl_t *del_rotate_left(avl_t *sib, avl_t *p, int sib_bf)
+avl_t *del_rotate_left(avl_t *n)
 {
 	avl_t *r_root = NULL;
 	avl_t *c_root = NULL;
+	int rbf;
 
-	if (sib_bf > 0)
+	if (n == NULL)
+		return (NULL);
+
+	rbf = binary_tree_balance(n->right);
+
+	if (rbf > 0)
 	{
-		c_root = binary_tree_rotate_right(sib);
-		p->right = c_root;
-		c_root->parent = p;
-		r_root = binary_tree_rotate_left(p);
+		c_root = binary_tree_rotate_right(n->right);
+		n->right = c_root;
+		c_root->parent = n;
+		r_root = binary_tree_rotate_left(n);
 	}
 	else
 	{
-		r_root = binary_tree_rotate_left(p);
+		r_root = binary_tree_rotate_left(n);
 	}
 
 	return (r_root);
@@ -52,27 +56,31 @@ avl_t *del_rotate_left(avl_t *sib, avl_t *p, int sib_bf)
 
 /**
  * del_rotate_right - right rotates a subtree to balance an AVL tree
- * @sib: pointer to the sibling node of the affected subtree
- * @p: pointer to the root node of the subtree
- * @sib_bf: the balance factor of the sibling node
+ * @n: pointer to the root node of the subtree
  *
  * Return: the new root node of the rotated subtree.
  */
-avl_t *del_rotate_right(avl_t *sib, avl_t *p, int sib_bf)
+avl_t *del_rotate_right(avl_t *n)
 {
 	avl_t *r_root = NULL;
 	avl_t *c_root = NULL;
+	int lbf;
 
-	if (sib_bf < 0)
+	if (n == NULL)
+		return (NULL);
+
+	lbf = binary_tree_balance(n->left);
+
+	if (lbf < 0)
 	{
-		c_root = binary_tree_rotate_left(sib);
-		p->left = c_root;
-		c_root->parent = p;
-		r_root = binary_tree_rotate_right(p);
+		c_root = binary_tree_rotate_left(n->left);
+		n->left = c_root;
+		c_root->parent = n;
+		r_root = binary_tree_rotate_right(n);
 	}
 	else
 	{
-		r_root = binary_tree_rotate_right(p);
+		r_root = binary_tree_rotate_right(n);
 	}
 
 	return (r_root);
@@ -81,50 +89,42 @@ avl_t *del_rotate_right(avl_t *sib, avl_t *p, int sib_bf)
 /**
  * del_avl_balance - balances an AVL tree after a deletion
  * @tree: double pointer to the root node of the tree
- * @node: pointer to the node that was deleted
- * @sib: pointer to the node's sibling
+ * @node: pointer to the root node of the first affected subtree
  */
-void del_avl_balance(avl_t **tree, avl_t *node, avl_t *sib)
+void del_avl_balance(avl_t **tree, avl_t *node)
 {
-	avl_t *p, *gp = NULL;
-	int sib_bf, p_bf;
+	avl_t *r_root = NULL, *p = NULL;
+	int bf;
 
-	if (tree == NULL || node == NULL)
-		return;
-
-	for (p = node->parent; p; p = gp)
+	while (node)
 	{
-		gp = p->parent;
-		p_bf = binary_tree_balance(p);
+		p = node->parent;
+		bf = binary_tree_balance(node);
 
-		if (abs(p_bf) == 1)
-			break;
-
-		if (p_bf == 0)
+		if (abs(bf) <= 1)
 		{
 			node = p;
 			continue;
 		}
-		sib = sib ? sib : (node == p->left ? p->right : p->left);
-		sib_bf = binary_tree_balance(sib);
-		if (node == p->left && p_bf < -1)
-			node = del_rotate_left(sib, p, sib_bf);
-		else if (p_bf > -1)
-			node = del_rotate_right(sib, p, sib_bf);
 
-		node->parent = gp;
-		if (gp != NULL)
+		if (bf > 1)
+			r_root = del_rotate_right(node);
+		else
+			r_root = del_rotate_left(node);
+
+		r_root->parent = p;
+
+		if (p)
 		{
-			if (p == gp->left)
-				gp->left = node;
+			if (node == p->left)
+				p->left = r_root;
 			else
-				gp->right = node;
+				p->right = r_root;
 		}
 		else
-			*tree = node;
-		sib = NULL;
-		if (sib_bf == 0)
-			break;
+			*tree = r_root;
+
+		node = p;
 	}
 }
 
@@ -137,7 +137,7 @@ void del_avl_balance(avl_t **tree, avl_t *node, avl_t *sib)
  */
 avl_t *avl_remove(avl_t *root, int value)
 {
-	avl_t *node, *succ, *sub, *sib;
+	avl_t *node, *succ, *aff_sub;
 
 	if (root == NULL)
 		return (NULL);
@@ -150,8 +150,8 @@ avl_t *avl_remove(avl_t *root, int value)
 			node = node->right;
 	if (node == NULL)
 		return (NULL);
-	sub = node->parent;
-	sib = sub ? (node == sub->left ? sub->right : sub->left) : NULL;
+
+	aff_sub = node->parent;
 	if (node->left == NULL)
 		shift_nodes(&root, node, node->right);
 	else if (node->right == NULL)
@@ -164,8 +164,7 @@ avl_t *avl_remove(avl_t *root, int value)
 
 		if (succ->parent != node)
 		{
-			sub = succ->parent;
-			sib = sub ? (node == sub->left ? sub->right : sub->left) : NULL;
+			aff_sub = succ->parent;
 			shift_nodes(&root, succ, succ->right);
 			succ->right = node->right;
 			succ->right->parent = succ;
@@ -174,7 +173,8 @@ avl_t *avl_remove(avl_t *root, int value)
 		succ->left = node->left;
 		succ->left->parent = succ;
 	}
-	del_avl_balance(&root, node, sib);
+
+	del_avl_balance(&root, aff_sub);
 	free(node);
 	return (root);
 }
