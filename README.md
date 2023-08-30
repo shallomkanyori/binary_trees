@@ -233,3 +233,13 @@
 - And `size` is the number of elements in the array
 - Returns a pointer to the root node of the created AVL tree, or `NULL` on failure
 - If a value of the array is already present in the tree, this value is ignored
+
+#### Task 33: AVL - Remove
+[123-avl_remove.c](123-avl_remove.c) contains a function that removes a node from an AVL tree
+- Prototype: `avl_t *avl_remove(avl_t *root, int value);`
+- Where `root` is a pointer to the root node of the tree to remove a node from
+- And `value` is the value to remove in the tree
+- Once located, the node containing a value equals to value is removed and freed
+- If the node to be deleted has two children, it is replaced with its first `in-order successor`
+- The tree is rebalanced after deletion of the desired node if necessary
+- Returns a pointer to the new root node of the tree after removing the desired value

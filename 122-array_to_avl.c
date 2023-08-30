@@ -25,10 +25,15 @@ void avl_delete(binary_tree_t *tree)
  */
 int *remove_duplicates(int *arr, size_t *s)
 {
-	size_t i, j, u_ind;
-	size_t size = *s;
+	size_t i, j, u_ind = 0;
+	size_t size;
 	int *arr_cpy;
 	int is_dup = 0;
+
+	if (arr == NULL || s == NULL)
+		return (NULL);
+
+	size = *s;
 
 	arr_cpy = malloc(sizeof(int) * size);
 	if (arr_cpy == NULL)
