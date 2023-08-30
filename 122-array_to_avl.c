@@ -19,21 +19,19 @@ void avl_delete(binary_tree_t *tree)
 /**
  * remove_duplicates - returns copy of array with duplicates removed
  * @arr: the array
- * @s: pointer to the size of the array
+ * @size: the size of the array
+ * @new_size: pointer to the new size of the array
  *
  * Return: the new array. NULL on failure.
  */
-int *remove_duplicates(int *arr, size_t *s)
+int *remove_duplicates(int *arr, size_t size, size_t *new_size)
 {
 	size_t i, j, u_ind = 0;
-	size_t size;
 	int *arr_cpy;
 	int is_dup = 0;
 
-	if (arr == NULL || s == NULL)
+	if (arr == NULL || new_size == NULL)
 		return (NULL);
-
-	size = *s;
 
 	arr_cpy = malloc(sizeof(int) * size);
 	if (arr_cpy == NULL)
@@ -44,7 +42,7 @@ int *remove_duplicates(int *arr, size_t *s)
 		is_dup = 0;
 		for (j = 0; j < u_ind; j++)
 		{
-			if (arr[i] == arr[j])
+			if (arr_cpy[j] == arr[i])
 			{
 				is_dup = 1;
 				break;
@@ -58,7 +56,7 @@ int *remove_duplicates(int *arr, size_t *s)
 		}
 	}
 
-	*s = u_ind;
+	*new_size = u_ind;
 
 	return (arr_cpy);
 }
@@ -74,12 +72,12 @@ avl_t *array_to_avl(int *array, size_t size)
 {
 	avl_t *root = NULL;
 	int *arr_cpy;
-	size_t i, new_size =  size;
+	size_t i, new_size = 0;
 
 	if (array == NULL || size == 0)
 		return (NULL);
 
-	arr_cpy = remove_duplicates(array, &new_size);
+	arr_cpy = remove_duplicates(array, size, &new_size);
 
 	for (i = 0; i < new_size; i++)
 	{
