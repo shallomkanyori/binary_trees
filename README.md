@@ -253,3 +253,9 @@
 - Assumes there will be no duplicate value in the array
 - Does not rotate
 - File only has 2 functions
+
+#### Task 35: Big 0 #AVL Tree
+[125-O](125-O) contains the average time complexities of these operations on an AVL Tree (one answer per line):
+- Inserting the value `n`
+- Removing the node with the value `n`
+- Searching for a node in an AVL tree of size n
