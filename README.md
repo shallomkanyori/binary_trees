@@ -282,3 +282,12 @@
 - Where `array` is a pointer to the first element of the array to be converted
 - And `size` is the number of elements in the array
 - Returns a pointer to the root node of the created binary heap, or `NULL` on failure
+
+#### Task 39: Heap - Extract
+[133-heap_extract.c](133-heap_extract.c) contains a function that extracts the root node of a Max Binary Heap
+- Prototype: `int heap_extract(heap_t **root);`
+- Where `root` is a double pointer to the root node of heap
+- Returns the value stored in the root node
+- The root node is freed and replaced with the last `level-order` node of the heap
+- Once replaced, the heap is rebuilt if necessary
+- Returns `0` if it fails
