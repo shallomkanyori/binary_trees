@@ -181,7 +181,9 @@ int heap_extract(heap_t **root)
 		*root = NULL;
 		return (res);
 	}
-	else if (last == last->parent->left)
+
+	*root = last;
+	if (last == last->parent->left)
 		last->parent->left = NULL;
 	else
 		last->parent->right = NULL;
