@@ -275,3 +275,10 @@
 - Returns a pointer to the created node, or `NULL` on failure
 - If the address stored in `tree` is `NULL`, the created node becomes the root node.
 - After the insertion, the tree remains a max heap.
+
+#### Task 38: Heap - Array to Binary Heap
+[132-array_to_heap.c](132-array_to_heap.c) contains a  function that builds an max binary heap tree from an array
+- Prototype: `heap_t *sorted_array_to_heap(int *array, size_t size);`
+- Where `array` is a pointer to the first element of the array to be converted
+- And `size` is the number of elements in the array
+- Returns a pointer to the root node of the created binary heap, or `NULL` on failure
