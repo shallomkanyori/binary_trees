@@ -266,3 +266,12 @@
 - Where `tree` is a pointer to the root node of the tree to check
 - Returns `1` if `tree` is a valid Max Binary Heap, and `0` otherwise
 - Returns `0` if tree is `NULL`
+
+#### Task 37: Heap - Insert
+[131-heap_insert.c](131-heap_insert.c) contains a function that inserts a value in a max binary heap
+- Prototype: `heap_t *heap_insert(heap_t **root, int value);`
+- Where `root` is a double pointer to the root node of the heap to insert the value
+- And `value` is the value to store in the node to be inserted
+- Returns a pointer to the created node, or `NULL` on failure
+- If the address stored in `tree` is `NULL`, the created node becomes the root node.
+- After the insertion, the tree remains a max heap.
