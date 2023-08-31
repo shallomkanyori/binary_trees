@@ -259,3 +259,10 @@
 - Inserting the value `n`
 - Removing the node with the value `n`
 - Searching for a node in an AVL tree of size n
+
+#### Task 36: Is Binary heap
+[130-binary_tree_is_heap.c](130-binary_tree_is_heap.c) contains a function that checks if a binary tree is a valid Max Binary Heap
+- Prototype: `int binary_tree_is_heap(const binary_tree_t *tree);`
+- Where `tree` is a pointer to the root node of the tree to check
+- Returns `1` if `tree` is a valid Max Binary Heap, and `0` otherwise
+- Returns `0` if tree is `NULL`
