@@ -299,3 +299,9 @@
 - And `size` is an address to store the size of the array
 - Assumes `size` is a valid address
 - Since `heap` is a Max Heap, the returned array is sorted in descending order
+
+#### Task 41: Big O #Binary Heap
+[135-O](135-O) contains the average time complexities of those operations on a Binary Heap (one answer per line):
+- Inserting the value n
+- Extracting the root node
+- Searching for a node in a binary heap of size n
