@@ -291,3 +291,11 @@
 - The root node is freed and replaced with the last `level-order` node of the heap
 - Once replaced, the heap is rebuilt if necessary
 - Returns `0` if it fails
+
+#### Task 40: Heap - Sort
+[134-heap_to_sorted_array.c](134-heap_to_sorted_array.c) contains a function that converts a Binary Max Heap to a sorted array of integers
+- Prototype: `int *heap_to_sorted_array(heap_t *heap, size_t *size);`
+- Where `heap` is a pointer to the root node of the heap to convert
+- And `size` is an address to store the size of the array
+- Assumes `size` is a valid address
+- Since `heap` is a Max Heap, the returned array is sorted in descending order
