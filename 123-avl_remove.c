@@ -161,7 +161,7 @@ avl_t *avl_remove(avl_t *root, int value)
 		succ = node->right;
 		while (succ->left)
 			succ = succ->left;
-
+		aff_sub = succ;
 		if (succ->parent != node)
 		{
 			aff_sub = succ->parent;
